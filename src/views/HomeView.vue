@@ -1,8 +1,9 @@
-<script setup lang="ts"></script>
-
 <template>
   <div>
-    <h2 class="font-bold underline">hui</h2>
-   
+    <h2>Главная</h2>
   </div>
 </template>
+
+<script setup lang="ts"></script>
+
+<style scoped></style>

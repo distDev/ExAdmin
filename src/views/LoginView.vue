@@ -1,7 +1,9 @@
 <template>
+  <div>
     <h2>Логин</h2>
+  </div>
 </template>
 
-<style>
+<script setup lang="ts"></script>
 
-</style>
+<style lang="scss" scoped></style>
