@@ -1,48 +1,14 @@
 <template>
   <div class="flex flex-col gap-[15px]">
-    <div class="w-full">
-      <div
-        class="flex justify-between items-center w-full p-[30px] bg-white rounded-lg shadow-mainShadow px-5 py-5"
-      >
-        <div class="flex gap-4">
-          <div
-            class="bg-lightGrey text-textSecond rounded-lg flex items-center justify-center text-sm font-medium px-6 py-3"
-          >
-            Автомобили
-          </div>
-          <button
-            class="bg-primary text-white rounded-lg flex items-center justify-center text-sm font-medium px-6 py-3 hover:opacity-75"
-          >
-            Добавить
-          </button>
-        </div>
-        <div class="flex gap-4">
-          <div
-            class="bg-lightGrey cursor-pointer rounded-lg h-10 w-10 flex items-center justify-center text-textSecond hover:text-primary"
-          >
-            <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-          </div>
-          <div
-            class="bg-lightGrey cursor-pointer rounded-lg h-10 w-10 flex items-center justify-center text-textSecond hover:text-primary"
-          >
-            <font-awesome-icon icon="fa-solid fa-filter" />
-          </div>
-          <div
-            class="bg-lightGrey cursor-pointer rounded-lg h-10 w-10 flex items-center justify-center text-textSecond hover:text-primary"
-          >
-            <font-awesome-icon icon="fa-solid fa-trash" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <TabelLarge :table-headers="tableHeaders" :table-body="tableBody" />
+    <TableControls title="Пользователи" />
+    <TabelLarge :table-headers="tableHeaders" :table-data="tableData" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity';
 import { ref } from 'vue';
 import TabelLarge from '../components/table-large/TabelLarge.vue';
+import TableControls from '../components/table-controls/TableControls.vue';
 
 const tableData = ref([
   {
@@ -51,14 +17,14 @@ const tableData = ref([
     записи: '0',
     автомобили: '2',
     имя: 'Иван',
-    телефон: '+7 925 380 25 66',
+    телефон: '+7 925 380 53 55',
   },
   {
     id: 'rgherherhe',
     статус: 'Подтвержден',
     записи: '0',
     автомобили: '2',
-    имя: 'Иван',
+    имя: 'Дмитрий',
     телефон: '+7 925 380 25 66',
   },
   {
@@ -66,8 +32,8 @@ const tableData = ref([
     статус: 'Подтвержден',
     записи: '0',
     автомобили: '2',
-    имя: 'Иван',
-    телефон: '+7 925 380 25 66',
+    имя: 'Олег',
+    телефон: '+7 925 386 25 61',
   },
   {
     id: '4125343gjterherh',
@@ -75,7 +41,7 @@ const tableData = ref([
     записи: '0',
     автомобили: '2',
     имя: 'Иван',
-    телефон: '+7 925 380 25 66',
+    телефон: '+7 926 380 22 66',
   },
   {
     id: '41253ttterherh',
@@ -83,17 +49,8 @@ const tableData = ref([
     записи: '0',
     автомобили: '2',
     имя: 'Иван',
-    телефон: '+7 925 380 25 66',
+    телефон: '+7 925 330 25 66',
   },
 ]);
-
-// header таблицы
 const tableHeaders = ref(['имя', 'телефон', 'записи', 'автомобили', 'статус']);
-
-// сортировка колонн
-const tableBody = computed(() =>
-  tableData.value.map((item: any) =>
-    tableHeaders.value.map((header: string) => item[header])
-  )
-);
 </script>

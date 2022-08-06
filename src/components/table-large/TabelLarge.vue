@@ -21,9 +21,9 @@
       <tbody>
         <!-- колонна -->
         <tr
-          class="text-base border-b border-border"
-          v-for="tableBodyItem in props.tableBody"
-          :key="tableBodyItem"
+          class="text-base border-b border-border hover:bg-lightGrey cursor-pointer"
+          v-for="tableBodyItem in tableBody"
+          :key="tableBodyItem[0]"
         >
           <!-- чекбокс -->
           <td class="p-4 w-4">
@@ -31,6 +31,8 @@
               id="checkbox-table-search-1"
               type="checkbox"
               class="w-4 h-4"
+              v-model="selectedItem"
+              :value="tableBodyItem[1]"
             />
           </td>
           <!-- данные таблицы -->
@@ -47,14 +49,23 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps<{
   tableHeaders: string[];
-  tableBody: any;
-  
+  tableData: any;
 }>();
 
-console.log(props.tableBody);
+const tableHeader = ref(props.tableHeaders);
+const data = ref(props.tableData);
+const selectedItem = ref<any>([]);
+
+// сортировка колонн
+const tableBody = computed(() =>
+  data.value.map((item: any) =>
+    tableHeader.value.map((header: string) => item[header])
+  )
+);
 </script>

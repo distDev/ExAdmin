@@ -17,7 +17,17 @@ import {
 import App from './App.vue';
 import router from './router';
 
-library.add(faHouse, faUser, faCar, faCalendar, faWrench, faArrowRightFromBracket, faMagnifyingGlass, faFilter, faTrash);
+library.add(
+  faHouse,
+  faUser,
+  faCar,
+  faCalendar,
+  faWrench,
+  faArrowRightFromBracket,
+  faMagnifyingGlass,
+  faFilter,
+  faTrash
+);
 
 const app = createApp(App);
 app.use(createPinia());
