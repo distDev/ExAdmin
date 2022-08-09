@@ -17,7 +17,7 @@ const tableData = ref([
     category: 'Автосервис',
     subcategory: 'Жидкости и масло',
     price: '450',
-    img: 'https://scuffedentertainment.com/wp-content/uploads/2021/11/what-car-suits-you-best-quiz.jpg',
+    img: 'https://maserati.scene7.com/is/image/maserati/maserati/regional/us/models/my22/levante/22_LV_Trofeo_PS_T1_HomePage_1920x1080.jpg?$1920x2000$&fit=constrain',
   },
   {
     id: '41242tw3t1421',
@@ -25,7 +25,7 @@ const tableData = ref([
     category: 'Диагностика',
     subcategory: 'Двигатель',
     price: '2000',
-    img: 'https://scuffedentertainment.com/wp-content/uploads/2021/11/what-car-suits-you-best-quiz.jpg',
+    img: 'https://maserati.scene7.com/is/image/maserati/maserati/regional/us/models/my22/levante/22_LV_Trofeo_PS_T1_HomePage_1920x1080.jpg?$1920x2000$&fit=constrain',
   },
   {
     id: '41242ttw1421',
@@ -33,7 +33,7 @@ const tableData = ref([
     category: 'Автосервис',
     subcategory: 'Жидкости и масло',
     price: '340',
-    img: 'https://scuffedentertainment.com/wp-content/uploads/2021/11/what-car-suits-you-best-quiz.jpg',
+    img: 'https://maserati.scene7.com/is/image/maserati/maserati/regional/us/models/my22/levante/22_LV_Trofeo_PS_T1_HomePage_1920x1080.jpg?$1920x2000$&fit=constrain',
   },
   {
     id: '4124214tw3t221',
@@ -41,7 +41,7 @@ const tableData = ref([
     category: 'Автосервис',
     subcategory: 'Колеса',
     price: '4500',
-    img: 'https://scuffedentertainment.com/wp-content/uploads/2021/11/what-car-suits-you-best-quiz.jpg',
+    img: 'https://maserati.scene7.com/is/image/maserati/maserati/regional/us/models/my22/levante/22_LV_Trofeo_PS_T1_HomePage_1920x1080.jpg?$1920x2000$&fit=constrain',
   },
 ]);
 

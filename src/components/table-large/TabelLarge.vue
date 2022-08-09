@@ -47,17 +47,19 @@
             {{ childItem }}
           </td>
           <td class="py-4 px-6" v-if="checkImage.length > 0">
-            <span v-for="imgItem in data[index]" :key="imgItem">
-              {{imgItem}}
-            </span>
+            <img
+              :src="imgItem.img"
+              alt="img"
+              class="w-13 h-12 rounded"
+              v-for="imgItem in data.slice(index, index + 1)"
+              :key="imgItem"
+            />
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div>
-   
-  </div>
+  <div></div>
 </template>
 
 <script setup lang="ts">
@@ -81,6 +83,4 @@ const tableBody = computed(() =>
 
 // проверка на присутвие изображения для раздела "Услуги"
 const checkImage = computed(() => data.value.filter((e: any) => e.img));
-
-console.log(data.value);
 </script>
