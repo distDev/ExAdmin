@@ -45,5 +45,5 @@ const tableData = ref([
   },
 ]);
 
-const tableHeaders = ref(['title', 'category', 'subcategory', 'price', ]);
+const tableHeaders = ref(['title', 'category', 'subcategory', 'price']);
 </script>

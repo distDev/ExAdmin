@@ -25,8 +25,8 @@
         <!-- колонна -->
         <tr
           class="text-base border-b border-border hover:bg-lightGrey cursor-pointer"
-          v-for="(tableBodyItem, index) in tableBody"
-          :key="tableBodyItem[0]"
+          v-for="(item, index) in tableData"
+          :key="index"
         >
           <!-- чекбокс -->
           <td class="p-4 w-4">
@@ -35,25 +35,14 @@
               type="checkbox"
               class="w-4 h-4"
               v-model="selectedItem"
-              :value="tableBodyItem[1]"
+              :value="item.id"
             />
           </td>
-          <!-- данные таблицы -->
-          <td
-            class="py-4 px-6"
-            v-for="childItem in tableBodyItem"
-            :key="childItem"
-          >
-            {{ childItem }}
+          <td class="py-4 px-6" v-for="header in tableHeaders" :key="header">
+            {{ item[header] }}
           </td>
-          <td class="py-4 px-6" v-if="checkImage.length > 0">
-            <img
-              :src="imgItem.img"
-              alt="img"
-              class="w-13 h-12 rounded"
-              v-for="imgItem in data.slice(index, index + 1)"
-              :key="imgItem"
-            />
+          <td v-if="checkImage.length > 0 && item.img">
+            <img :src="item.img" class="h-12 w-22 rounded-md m-auto" />
           </td>
         </tr>
       </tbody>
@@ -73,13 +62,6 @@ const props = defineProps<{
 const tableHeader = ref(props.tableHeaders);
 const data = ref(props.tableData);
 const selectedItem = ref<any>([]);
-
-// сортировка колонн
-const tableBody = computed(() =>
-  data.value.map((item: any) =>
-    tableHeader.value.map((header: string) => item[header])
-  )
-);
 
 // проверка на присутвие изображения для раздела "Услуги"
 const checkImage = computed(() => data.value.filter((e: any) => e.img));
