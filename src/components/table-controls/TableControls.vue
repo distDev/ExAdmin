@@ -42,20 +42,16 @@
 
 <script setup lang="ts">
 import { useModalStore } from '@/stores/modal';
-import { ref } from 'vue';
 import AddingModal from '../adding-modal/AddingModal.vue';
 
 const props = defineProps<{
   title: string;
 }>();
 
-const isOpenModal = ref(false);
 const storeModal = useModalStore();
 
 const openModal = () => {
-  storeModal.openModal()
+  storeModal.openModal();
   storeModal.changeVariant(props.title);
 };
 </script>
-
-<style scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-[15px]">
-    <TableControls title="Автомобили"/>
+    <TableControls title="Автомобили" />
     <TabelLarge :table-headers="tableHeaders" :table-data="tableData" />
   </div>
 </template>
@@ -54,8 +54,6 @@ const tableData = ref([
 ]);
 
 const tableHeaders = ref(['model', 'vin', 'brand', 'name', 'phone']);
-
-
 </script>
 
 <script lang="ts">

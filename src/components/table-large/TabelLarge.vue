@@ -15,6 +15,9 @@
           >
             {{ item }}
           </th>
+          <th scope="col" class="py-3 px-6" v-if="checkImage.length > 0">
+            img
+          </th>
         </tr>
       </thead>
       <!-- тело таблицы -->
@@ -22,7 +25,7 @@
         <!-- колонна -->
         <tr
           class="text-base border-b border-border hover:bg-lightGrey cursor-pointer"
-          v-for="tableBodyItem in tableBody"
+          v-for="(tableBodyItem, index) in tableBody"
           :key="tableBodyItem[0]"
         >
           <!-- чекбокс -->
@@ -43,12 +46,19 @@
           >
             {{ childItem }}
           </td>
+          <td class="py-4 px-6" v-if="checkImage.length > 0">
+            <span v-for="imgItem in data[index]" :key="imgItem">
+              {{imgItem}}
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+  <div>
+   
+  </div>
 </template>
-
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
@@ -68,4 +78,9 @@ const tableBody = computed(() =>
     tableHeader.value.map((header: string) => item[header])
   )
 );
+
+// проверка на присутвие изображения для раздела "Услуги"
+const checkImage = computed(() => data.value.filter((e: any) => e.img));
+
+console.log(data.value);
 </script>
