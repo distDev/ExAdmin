@@ -8,6 +8,7 @@
 * TypeScript
 * Pinia
 * Tailwind 
+* Vitest
 
 ## Backend: 
 * Firebase
