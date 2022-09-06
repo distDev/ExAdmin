@@ -7,7 +7,8 @@
 
 * TypeScript
 * Pinia
-* Tailwind 
+* Tailwind
+* Axios 
 * Vitest
 
 ## Backend: 
