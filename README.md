@@ -9,7 +9,6 @@
 * Pinia
 * Tailwind
 * Axios 
-* Vitest
 
 ## Backend: 
 * Firebase
