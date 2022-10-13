@@ -9,6 +9,7 @@
 * Pinia
 * Tailwind
 * Axios 
+* Vue Calendar 
 
 ## Backend: 
 * Firebase
