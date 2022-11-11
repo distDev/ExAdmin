@@ -10,7 +10,7 @@
 * Tailwind
 * Axios 
 * Vue Calendar 
-* Jest
+* Vitest
 
 ## Backend: 
 * Firebase
